@@ -3,15 +3,15 @@ import { View, StyleSheet, Text, Image } from "react-native";
 import { Ionicons } from '@expo/vector-icons'
 import { IconButton, Colors } from 'react-native-paper'
 
-import Palet from './../images/mesadepalet.jpg';
+import Enchente from './../images/enchente.jpg';
 import { useNavigation } from "@react-navigation/native";
 
 
-export default function GuideItem() {
+export default function RiskLocate() {
     const navigation = useNavigation()
 
-    function handleNavigatetoList() {
-        navigation.navigate('GuidePalet')
+    function handleNavigatetoListRisk() {
+        navigation.navigate('RiskLocateFloot')
     }
 
     return (
@@ -19,17 +19,17 @@ export default function GuideItem() {
          <View style={styles.project}>
                 <Image
                     style={styles.avatar}
-                    source={Palet} />
+                    source={Enchente} />
 
                 <View style={styles.titles}>
-                    <Text style={styles.titleTheme}>Paletes</Text>
-                    <Text style={styles.subTitle}>Saiba Mais</Text>
+                    <Text style={styles.titleTheme}>Enchente</Text>
+                    <Text style={styles.subTitle}>Enchente ou cheia ...</Text>
                 </View>
                 <IconButton
                     icon="arrow-right"
                     color={Colors.deepPurple800}
                     size={20}
-                    onPress={handleNavigatetoList}
+                    onPress={handleNavigatetoListRisk}
                     style={styles.iconArrowGuide} />
             </View> 
 

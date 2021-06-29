@@ -4,6 +4,10 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { RectButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 
+import styled from './../styles/buttonNext'
+import agreeIcon from './../images/agree.png'
+import desgreeIcon from './../images/desgree.png'
+
 export default function Terms() {
 
     const navigation = useNavigation()
@@ -21,21 +25,38 @@ export default function Terms() {
                 <Text style={styles.termAgree}>Você Concorda?</Text>
             </LinearGradient>
 
-            <LinearGradient
+            <LinearGradient 
                 colors={['#6320EE', '#9632FE']}
-                style={styles.buttonTerm}>
-                <RectButton onPress={handlerNavigatetoLogin}>
-                    <Text style={styles.textButton}>Concordo</Text>
+                style={styled.buttonNext}>
+                <RectButton style={{
+                    width: 220,
+                    height: 43,
+                    padding: 3,
+                }} onPress={handlerNavigatetoLogin}>
+                    <View style={styled.containerButton}>
+                        <Text style={styled.textButton}>
+                            Concordo <Image source={agreeIcon} />
+                        </Text>
+                    </View>
                 </RectButton>
             </LinearGradient>
 
             <LinearGradient
                 colors={['#FB7800', '#f1953f']}
-                style={styles.buttonTerm}>
-                <RectButton>
-                    <Text style={styles.textButton}>Discordo</Text>
+                style={styled.buttonNext}>
+                <RectButton style={{
+                    width: 220,
+                    height: 43,
+                    padding: 3,
+                }}>
+                    <View style={styled.containerButton}>
+                        <Text style={styled.textButton}>
+                            Discordo <Image source={desgreeIcon} />
+                        </Text>
+                    </View>
                 </RectButton>
             </LinearGradient>
+
         </View>
     )
 }
@@ -52,41 +73,27 @@ const styles = StyleSheet.create({
         height: 500,
         // backgroundColor: "red",
         borderBottomLeftRadius: 150,
-        marginBottom: 99
     },
     termTitle: {
         marginLeft: 24,
-        fontSize: 30,
-        marginTop: 120,
+        fontSize: 25,
+        marginTop: 80,
         // margin: 120,
         color: '#fff',
         fontFamily: 'Quicksand',
     },
     termLegend: {
-        marginTop: 11,
+        marginTop: 15,
         marginHorizontal: 24,
-        fontSize: 20,
+        fontSize: 19,
         color: '#fff',
         fontFamily: 'WorkSans',
     },
     termAgree: {
         textAlign: 'center',
-        marginTop: 40,
+        marginTop: 60,
         fontSize: 25,
         color: '#fff',
         fontFamily: 'Quicksand',
-    },
-    textButton: {
-        color: '#fff',
-        textAlign: 'center',
-        marginTop: 5,
-        fontSize: 19,
-        fontFamily: 'WorkSans',
-    },
-    buttonTerm: {
-        width: 220,
-        height: 43,
-        borderRadius: 54,
-        marginTop: 20,
-    },
+    }
 });

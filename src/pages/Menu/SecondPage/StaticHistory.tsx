@@ -34,10 +34,10 @@ const styles = StyleSheet.create({
     },
     square: {
         width: 411,
-        height: 660,
+        height: 720,
         backgroundColor: "#fff",
         bottom: 0,
-        position: "absolute",
+        position: "absolute", 
         borderTopLeftRadius: 68,
         borderTopRightRadius: 68,
     },

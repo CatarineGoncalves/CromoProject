@@ -4,6 +4,13 @@ import { LinearGradient } from "expo-linear-gradient";
 import { RectButton } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 
+import { Avatar } from 'react-native-paper';
+
+import styled from './../styles/buttonNext'
+
+import okIcon from './../images/okIcon.png'
+import peopleImg from './../images/Union.png'
+import Woman from './../images/blackWoman.jpg'
 
 export default function Login() {
   // const [text] = React.useState(" Apelido...");
@@ -16,20 +23,47 @@ export default function Login() {
 
   return (
     <View style={styles.boxLogin}>
-      <LinearGradient colors={['#6320EE', '#9632FE']} style={styles.footerLogin}>
-        <Text style={styles.textLogin}>Como deseja ser chamado?</Text>
-        <TextInput style={styles.inputLogin}
-          placeholder={'Digite teu Apelido!'}
-          
-        />
+      <Image source={peopleImg} style={styles.backgroundImage} />
 
-        <LinearGradient
-          colors={['#FB7800', '#f1953f']}
-          style={styles.loginButton}>
-          <RectButton onPress={handlerNavigatetoMap}>
-            <Text style={styles.textButton}>Tudo certo!</Text>
-          </RectButton>
-        </LinearGradient>
+
+
+      <LinearGradient colors={['#6320EE', '#9632FE']} style={styles.footerLogin}>
+
+
+
+        <View style={styles.containerLogin}>
+          <Avatar.Image size={140} source={Woman} style={styles.imageWoman} />
+
+          <Text style={styles.textLogin}>Como deseja ser chamado?</Text>
+          <TextInput style={styles.inputLogin}
+            placeholder={'Digite teu Apelido!'}
+          />
+        </View>
+
+
+        <View style={styles.loginButton}>
+          <LinearGradient
+            colors={['#FB7800', '#f1953f']}
+            style={styled.buttonNext}>
+            <RectButton style={{
+              width: 220,
+              height: 43,
+              padding: 3,
+            }}
+              onPress={handlerNavigatetoMap}>
+
+              <View style={styled.containerButton}>
+                <Text style={styled.textButton}>
+                  Tudo certo! <Image source={okIcon} />
+                </Text>
+              </View>
+
+            </RectButton>
+          </LinearGradient>
+
+
+        </View>
+
       </LinearGradient>
     </View>
   );
@@ -40,7 +74,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    // justifyContent: 'center',
+
+  },
+  backgroundImage: {
+    height: 444,
+    width: 411,
+    backgroundColor: '#ff7b00',
+    opacity: 0.7,
   },
   footerLogin: {
     bottom: 0,
@@ -50,45 +90,39 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 88,
     borderTopLeftRadius: 88,
   },
+  imageWoman: {
+    marginVertical: -60
+  },
+
+  containerLogin: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+
   textLogin: {
     color: "#fff",
     fontSize: 22,
-    marginTop: 172,
-    marginBottom: 33,
+    marginTop: 130,
     textAlign: 'center',
     fontFamily: 'Quicksand',
-
+    marginBottom: 13,
   },
+
+
   inputLogin: {
-    textAlign: 'center',
     height: 50,
     width: 333,
-    marginHorizontal: 39,
+    alignItems: 'center',
     borderRadius: 44,
     backgroundColor: '#fff',
     shadowColor: '#000',
     fontFamily: 'Quicksand',
-
-
-  
-    // borderBottomColor: ''
+    padding: 13
   },
-  
+
   loginButton: {
-    width: 220,
-    height: 43,
-    borderRadius: 54,
-    marginTop: 144,
-    marginHorizontal: 99,
-  },
-
-  textButton: {
-    color: '#fff',
-    textAlign: 'center',
-    marginTop: 5,
-    fontSize: 19,
-    fontFamily: 'WorkSans',
-  },
-
+    alignItems: 'center'
+  }
 
 })

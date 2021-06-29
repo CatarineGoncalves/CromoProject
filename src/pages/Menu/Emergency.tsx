@@ -80,11 +80,12 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#F51116',
         alignItems: 'center',
+        
         // justifyContent: 'center',
     },
     square: {
         width: 411,
-        height: 600,
+        height: 660,
         backgroundColor: "#fff",
         bottom: 0,
         position: "absolute",
@@ -100,7 +101,7 @@ const styles = StyleSheet.create({
     },
     cardEmergency: {
         width: 300,
-        height: 150,
+        height: 130,
         marginHorizontal: 50,
         padding: 0,
         borderWidth: 2,
@@ -108,6 +109,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'red',
         marginTop: 40,
         flexDirection: 'column',
+        borderColor:'#fff'
     },
     leftEmergency: {
         flexDirection: 'column'
@@ -115,7 +117,8 @@ const styles = StyleSheet.create({
     callSOS: {
         color: '#fff',
         fontSize: 33,
-        marginLeft: 12
+        marginLeft: 12,
+        // textAlign: 'left'
     }
 
 })

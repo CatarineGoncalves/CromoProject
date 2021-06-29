@@ -2,7 +2,6 @@ import React from "react";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Ionicons } from '@expo/vector-icons';
 
-import Teste from "./../pages/Menu/Teste"
 import Emergency from "../pages/Menu/Emergency";
 import Guide from "../pages/Menu/Guide"
 import Static from "../pages/Menu/Static";
@@ -101,7 +100,6 @@ function RoutesTab() {
                 }
             }}
          />
-         {/* <Screen component={Teste} name="Teste"  /> */}
         </ Navigator>
     )
 }

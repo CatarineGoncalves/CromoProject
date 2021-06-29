@@ -1,23 +1,7 @@
 import React from 'react';
 import * as Font from 'expo-font';
 import Route from './src/routes/RoutesStack'
-// import RouteTab from './src/routes/routesTab'
 
-
-// export default function App() {
-//   const [fontsLoaded] = useFonts({
-//     WorkSans_600SemiBold,
-//     Quicksand_400Regular
-//   });
-
-//   if (!fontsLoaded) {
-//     return null;
-//   }
-
-//   return(
-
-//   )
-// }
 
 export default class App extends React.Component {
   state = {
